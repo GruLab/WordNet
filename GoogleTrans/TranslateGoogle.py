@@ -13,7 +13,7 @@ def get_data(Trans):
     return rows
 
 @ddt
-class NagpurTrans(unittest.TestCase):
+class GoogleTrans(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.driver = webdriver.Firefox()
@@ -40,7 +40,6 @@ class NagpurTrans(unittest.TestCase):
         time.sleep(1)
         self.driver.find_element_by_xpath(".//*[@id='gt-submit']").click()
         time.sleep(5)
-        #op = self.driver.find_element_by_xpath(".//*[@id='result_box']/span").get_attribute('value')
         op = self.driver.find_element_by_xpath(".//*[@id='result_box']/span").get_attribute('innerHTML')
         print(op)
         self.ws.write(0, 0, 'Input')

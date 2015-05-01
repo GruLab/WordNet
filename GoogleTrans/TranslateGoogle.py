@@ -41,7 +41,6 @@ class GoogleTrans(unittest.TestCase):
         self.driver.find_element_by_xpath(".//*[@id='gt-submit']").click()
         time.sleep(5)
         op = self.driver.find_element_by_xpath(".//*[@id='result_box']").text
-        print(op)
         self.ws.write(0, 0, 'Input')
         self.ws.write(0, 1, 'Output')
         self.ws.write(input_row, 0, input_data)

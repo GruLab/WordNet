@@ -46,13 +46,13 @@ class GoogleTrans(unittest.TestCase):
         self.ws.write(input_row, 0, input_data)
         self.ws.write(input_row, 1, op)
         time.sleep(1)
-        self.wb.save("TransOutput.xls")
-        time.sleep(1)
         self.driver.find_element_by_xpath(".//*[@id='source']").clear()
 
     @classmethod
     def tearDownClass(cls):
-        time.sleep(2)
+        time.sleep(5)
+        cls.wb.save("TranslationOut.xls")
+        time.sleep(5)
         cls.driver.quit()
 
 if __name__ == '__main__':

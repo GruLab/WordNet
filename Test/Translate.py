@@ -44,9 +44,12 @@ class NagpurTrans(unittest.TestCase):
 
     @classmethod
     def tearDownClass(cls):
+        time.sleep(5)
+        cls.wb.save("TransOutput.xls")
+        time.sleep(5)
         cls.driver.find_element_by_xpath(".//*[@id='navigation']/ul/li[4]/a").click()
         time.sleep(2)
         cls.driver.quit()
-        cls.wb.save("TransOutput.xls")
+
 if __name__ == '__main__':
     unittest.main()

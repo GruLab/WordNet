@@ -27,7 +27,7 @@ class GoogleTrans(unittest.TestCase):
         time.sleep(1)
         cls.driver.find_element_by_xpath(".//*[@id='gt-tl-gms']/div[2]").click()
         time.sleep(1)
-        cls.driver.find_element_by_xpath(".//*[@id=':3i']").click()
+        cls.driver.find_element_by_xpath(".//*[@id=':46']/div").click()
         time.sleep(1)
         cls.wb = xlwt.Workbook(encoding="utf-8")
         cls.ws = cls.wb.add_sheet("Sheet1", cell_overwrite_ok=True)
@@ -40,7 +40,7 @@ class GoogleTrans(unittest.TestCase):
         time.sleep(1)
         self.driver.find_element_by_xpath(".//*[@id='gt-submit']").click()
         time.sleep(5)
-        op = self.driver.find_element_by_xpath(".//*[@id='result_box']/span").get_attribute('innerHTML')
+        op = self.driver.find_element_by_xpath(".//*[@id='result_box']").text
         print(op)
         self.ws.write(0, 0, 'Input')
         self.ws.write(0, 1, 'Output')

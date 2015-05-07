@@ -32,6 +32,7 @@ class NagpurTrans(unittest.TestCase):
     @unpack
     def test_Translation(self, input_row, input_data):
         self.driver.find_element_by_xpath(".//*[@id='sinputText']").send_keys(input_data)
+        time.sleep(2)
         self.driver.find_element_by_xpath(".//*[@id='btnTranslate']").click()
         time.sleep(15)
         op = self.driver.find_element_by_xpath(".//*[@id='vboText']").get_attribute('value')

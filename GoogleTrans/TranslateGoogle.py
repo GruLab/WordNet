@@ -37,15 +37,19 @@ class GoogleTrans(unittest.TestCase):
     @unpack
     def test_Translation(self, input_row, input_data):
         self.driver.find_element_by_xpath(".//*[@id='source']").send_keys(input_data)
-        time.sleep(1)
+        time.sleep(2)
         self.driver.find_element_by_xpath(".//*[@id='gt-submit']").click()
-        time.sleep(5)
+        time.sleep(11)
         op = self.driver.find_element_by_xpath(".//*[@id='result_box']").text
+        time.sleep(2)
         self.ws.write(0, 0, 'Input')
+        time.sleep(2)
         self.ws.write(0, 1, 'Output')
+        time.sleep(2)
         self.ws.write(input_row, 0, input_data)
+        time.sleep(2)
         self.ws.write(input_row, 1, op)
-        time.sleep(1)
+        time.sleep(2)
         self.driver.find_element_by_xpath(".//*[@id='source']").clear()
 
     @classmethod

@@ -1,4 +1,4 @@
-__author__ = 'Kan!skA'
+__author__ = 'Kan!skA & Ashish'
 
 import unittest, xlrd, xlwt, time
 from selenium import webdriver

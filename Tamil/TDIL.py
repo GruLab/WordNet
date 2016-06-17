@@ -1,7 +1,8 @@
-# __author__ = 'Kan!skA'
+# __author__ = 'ɐʞƨ!uɐʞ'
 
 import unittest
 import csv
+import time
 from selenium import webdriver
 from selenium.webdriver.support.ui import Select
 
@@ -29,6 +30,7 @@ class ExtractData(unittest.TestCase):
                 # Creating and Appending data into the Output File
                 op = open(str(i).strip("['']") + '.txt', 'a', encoding='utf8')
                 op.write('Input: ' + str(i).strip("['']") + '\n\n')
+                time.sleep(2)
                 # Extracting data from Home Page
                 op.write(self.driver.find_element_by_class_name("abc").text + '\n\n')
                 # Extracting data from 'Relations' option
@@ -37,9 +39,9 @@ class ExtractData(unittest.TestCase):
                 j = 1
                 while j < 11:
                     self.driver.find_element_by_xpath(path1 + str(j) + path2).click()
-                    self.driver.implicitly_wait(5)
+                    time.sleep(2)
                     op.write(self.driver.find_element_by_class_name("middle_area").text + '\n\n')
-                    self.driver.implicitly_wait(5)
+                    time.sleep(2)
                     j += 1
                 # Closing the Output File
                 op.close()
